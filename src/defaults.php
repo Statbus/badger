@@ -11,7 +11,7 @@ $pixelxoffset = 0;
 $pixelyoffset = 0;
 
 
-$colorableSpecies = ["lizard","pod","jelly","slime","golem","ethereal","digitrade"];
+$colorableSpecies = ["human","lizard","pod","jelly","slime","golem","ethereal","digitrade"];
 
 $defaults = [
     'species' => 'human',
