@@ -31,12 +31,13 @@ jobs:
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
+            mkdir -p /tmp/badger
             echo "Stashing configuration files..."
             mv ~/serv/www/${{ secrets.DOMAIN }}/config.php /tmp/badger/config.php
             echo "Stashing generated icons..."
             mv ~/serv/www/${{ secrets.DOMAIN }}/public/icons /tmp/badger/icons
             echo "Copying files from staging..."
-            rsync -aqz --delete ~/staging/ ~/serv/www/${{ secrets.DOMAIN }}/
+            sudo rsync -aqz --delete ~/staging/ ~/serv/www/${{ secrets.DOMAIN }}/
             mv /tmp/badger/config.php ~/serv/www/${{ secrets.DOMAIN }}/config.php
             echo "Restoring generated icons..."
             mv /tmp/badger/icons ~/serv/www/${{ secrets.DOMAIN }}/public/
