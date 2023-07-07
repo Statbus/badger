@@ -6,6 +6,11 @@ require_once(__DIR__."/../vendor/autoload.php");
 
 use App\DMISpriteExtractor;
 
+$extraDMIs = [
+  'obj/card.dmi',
+  'mob/hud.dmi'
+];
+
 $password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 if (!$_SESSION['pass']) {
     if (PASSWORD && !$password) {
@@ -115,12 +120,21 @@ if ($iconfile = filter_input(INPUT_GET, 'icon', FILTER_SANITIZE_STRING, FILTER_F
     </h1>
     <hr>
     <div class="list-group">
+      <?php foreach ($extraDMIs as $file):?>
+      <div class="list-group-item d-flex justify-content-between align-items-center"><?php echo ICON_DIR."/$file";?>
+        <span><a href="?icon=<?php echo ICON_DIR."/$file";?>"
+            class="btn btn-primary render">Render</a>
+          <a href="?icon=<?php echo ICON_DIR."/$file";?>&show=true"
+            class="btn btn-info">View</a>
+        </span>
+      </div>
+      <?php endforeach;?>
       <?php
     $fileinfos = new RecursiveIteratorIterator(
-    new RecursiveDirectoryIterator(ICON_DIR."/mob")
-);
-    foreach ($fileinfos as $pathname => $fileinfo) :
-      if (strpos($pathname, '.dmi')) : ?>
+        new RecursiveDirectoryIterator(ICON_DIR."/mob")
+    );
+foreach ($fileinfos as $pathname => $fileinfo) :
+    if (strpos($pathname, '.dmi')) : ?>
       <div class="list-group-item d-flex justify-content-between align-items-center"><?php echo $pathname;?>
         <span><a href="?icon=<?php echo $pathname;?>"
             class="btn btn-primary render">Render</a>
