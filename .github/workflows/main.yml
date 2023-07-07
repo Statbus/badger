@@ -42,3 +42,4 @@ jobs:
             echo "Restoring generated icons..."
             mv /tmp/badger/icons ~/serv/www/${{ secrets.DOMAIN }}/public/
             echo "Done!"
+            rm -rf /tmp/badger
