@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Statbus Presents BadgeR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
         img {
@@ -238,31 +238,34 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-              <label for="gloves" class="form-label d-none">Gloves</label>
-              <div class="typeahead__container">
-                <div class="typeahead__field">
-                  <span class="typeahead__query">
-                    <input name="gloves" id='gloves' type="search" placeholder="Gloves" autocomplete="off"
-                      class='form-control field c'>
-                  </span>
+                        <label for="gloves" class="form-label d-none">Gloves</label>
+                        <div class="typeahead__container">
+                            <div class="typeahead__field">
+                                <span class="typeahead__query">
+                                    <input name="gloves" id='gloves' type="search" placeholder="Gloves" autocomplete="off" class='form-control field c'>
+                                </span>
 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="shoes" class="form-label d-none">Shoes</label>
-              <div class="typeahead__container">
-                <div class="typeahead__field">
-                  <span class="typeahead__query">
-                    <input name="shoes" id='shoes' type="search" placeholder="Shoes" autocomplete="off"
-                      class='form-control field c'>
-                  </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="shoes" class="form-label d-none">Shoes</label>
+                        <div class="typeahead__container">
+                            <div class="typeahead__field">
+                                <span class="typeahead__query">
+                                    <input name="shoes" id='shoes' type="search" placeholder="Shoes" autocomplete="off" class='form-control field c'>
+                                </span>
 
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-                </div>
         </form>
+        <hr>
+        <footer>
+            <p class="text-muted">Presented by <a href="https://statbus.space" target="_blank">Statbus</a> | <a href="https://github.com/Statbus/badger" target="_blank">Github</a></p>
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
