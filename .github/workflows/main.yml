@@ -32,16 +32,12 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
             echo "Stashing configuration files..."
-             mv ~/serv/www/${{ secrets.DOMAIN }}/config.php ~/serv/www/${{ secrets.DOMAIN }}/stg/config.php
+            mv ~/serv/www/${{ secrets.DOMAIN }}/config.php /tmp/badger/config.php
             echo "Stashing generated icons..."
-             mv ~/serv/www/${{ secrets.DOMAIN }}/public/icons ~/serv/www/${{ secrets.DOMAIN }}/stg/icons
+            mv ~/serv/www/${{ secrets.DOMAIN }}/public/icons /tmp/badger/icons
             echo "Copying files from staging..."
-             rsync -aqz --delete ~/staging/ ~/serv/www/${{ secrets.DOMAIN }}/
-             rm -rf ~/serv/www/${{ secrets.DOMAIN }}/public/*
-            echo "Moving newer assets into public directory..."
-             mv ~/serv/www/${{ secrets.DOMAIN }}/public/* ~/serv/www/${{ secrets.DOMAIN }}/public/
-             mv ~/serv/www/${{ secrets.DOMAIN }}/stg/config.php ~/serv/www/${{ secrets.DOMAIN }}/config.php
+            rsync -aqz --delete ~/staging/ ~/serv/www/${{ secrets.DOMAIN }}/
+            mv /tmp/badger/config.php ~/serv/www/${{ secrets.DOMAIN }}/config.php
             echo "Restoring generated icons..."
-             mv ~/serv/www/${{ secrets.DOMAIN }}/stg/icons ~/serv/www/${{ secrets.DOMAIN }}/public/
-            echo "Restoring file ownership..."
+            mv /tmp/badger/icons ~/serv/www/${{ secrets.DOMAIN }}/public/
             echo "Done!"
