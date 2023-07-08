@@ -1,0 +1,1 @@
+<textarea class="form-control user-select-all" id="code" rows="3"><?php echo DEFAULT_SPRITE;?></textarea>

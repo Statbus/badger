@@ -1,4 +1,4 @@
-<?php require_once(__DIR__."/../config.php");?>
+<?php require_once(__DIR__ . "/../config.php"); ?>
 <!doctype html>
 <html lang="en">
 
@@ -264,10 +264,15 @@
             </div>
         </form>
         <hr>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Generator Code <span class="text-muted">Save this to re-generate your sprite later on!</span></label>
+            <?php require_once(__DIR__."/../src/JsonCodeTextarea.php");?>
+        </div>
+        <hr>
         <footer>
             <div class="text-muted d-flex justify-content-between">
                 <span>Presented by <a href="https://statbus.space" target="_blank">Statbus</a> | <a href="https://github.com/Statbus/badger" target="_blank">Github</a></span>
-                <span>v. <?php echo VERSION;?></span>
+                <span>v. <?php echo VERSION; ?></span>
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

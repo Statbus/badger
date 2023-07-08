@@ -7,10 +7,6 @@ var typeahead_options = {
     maxItem: 0,
     callback: {
       onClickAfter: function (node, a, item, event) {
-        console.log(node)
-        console.log(a)
-        console.log(item)
-        console.log(event)
         $("#generator").submit();
       },
     },
@@ -151,10 +147,10 @@ $(".form-control").on("change", function(e){
 })
 $("form").on("submit", function (e) {
   e.preventDefault();
-  console.log($(this).serializeArray());
+  $('#code').val(JSON.stringify($(this).serializeArray()))
   $.ajax("img2.php", {
     dataType: "json",
-    data: $(this).serializeArray(),
+    data: JSON.parse($('#code').val()),
     method: "POST",
   }).done(function (i) {
     $("#mugshot").attr("src", `data:image/png;base64,${i.mugshot}`);
