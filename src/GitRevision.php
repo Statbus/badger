@@ -3,8 +3,8 @@
 namespace App;
 
 use DateTime;
-use DateTimeImmutable;
 use DateTimeZone;
+use App\SystemTools;
 
 class GitRevision
 {
@@ -27,6 +27,7 @@ class GitRevision
     public static function cacheRevision(): array
     {
         $revision = self::getRevision();
+        SystemTools::ensurePublicJsonDirectory();
         $file = fopen(self::OUTFILE, "w");
         fwrite($file, json_encode($revision));
         fclose($file);

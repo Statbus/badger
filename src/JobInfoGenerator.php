@@ -27,9 +27,7 @@ class JobInfoGenerator
 
     public static function parseJobs()
     {
-        if(!is_dir(OUTPUT_DIR."/../json")) {
-            mkdir(OUTPUT_DIR."/../json");
-        }
+        SystemTools::ensurePublicJsonDirectory();
         self::extractDefinesFromDmFile(DME_DIR."/code/__DEFINES/jobs.dm", self::TITLESFILE);
         self::extractDefinesFromDmFile(DME_DIR."/code/__DEFINES/colors.dm", self::COLORSFILE);
         self::extractDefinesFromDmFile(DME_DIR."/code/__DEFINES/atom_hud.dm", self::JOBICONSFILE);
