@@ -36,10 +36,14 @@ jobs:
             mv ~/serv/www/${{ secrets.DOMAIN }}/config.php /tmp/badger/config.php
             echo "Stashing generated icons..."
             mv ~/serv/www/${{ secrets.DOMAIN }}/public/icons /tmp/badger/icons
+            echo "Stashing generated json files..."
+            mv ~/serv/www/${{ secrets.DOMAIN }}/public/json /tmp/badger/json
             echo "Copying files from staging..."
             sudo rsync -aqz --delete ~/staging/ ~/serv/www/${{ secrets.DOMAIN }}/
             mv /tmp/badger/config.php ~/serv/www/${{ secrets.DOMAIN }}/config.php
             echo "Restoring generated icons..."
             mv /tmp/badger/icons ~/serv/www/${{ secrets.DOMAIN }}/public/
+            echo "Restoring generated json..."
+            mv /tmp/badger/json ~/serv/www/${{ secrets.DOMAIN }}/public/
             echo "Done!"
             rm -rf /tmp/badger
