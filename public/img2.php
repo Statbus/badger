@@ -42,7 +42,7 @@ foreach ($skinTone as &$c) {
 //Apply the skincolor
 imagefilter($body, IMG_FILTER_NEGATE);
 if (in_array($data->species, $colorableSpecies)) {
-    imagefilter($body, IMG_FILTER_COLORIZE, $skinTone[0], $skinTone[1], $skinTone[2], 50);
+    imagefilter($body, IMG_FILTER_COLORIZE, $skinTone[0], $skinTone[1], $skinTone[2], 25);
 }
 imagefilter($body, IMG_FILTER_NEGATE);
 
