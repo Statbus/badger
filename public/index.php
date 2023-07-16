@@ -1,4 +1,9 @@
-<?php require_once(__DIR__ . "/../config.php"); ?>
+<?php
+
+use App\GitRevision;
+
+require_once(__DIR__ . "/../config.php");
+require_once(__DIR__ . "/../vendor/autoload.php"); ?>
 <!doctype html>
 <html lang="en">
 
@@ -269,10 +274,11 @@
             <?php require_once(__DIR__."/../src/JsonCodeTextarea.php");?>
         </div>
         <hr>
-        <footer>
+        <footer class="mb-4">
             <div class="text-muted d-flex justify-content-between">
                 <span>Presented by <a href="https://statbus.space" target="_blank">Statbus</a> | <a href="https://github.com/Statbus/badger" target="_blank">Github</a></span>
-                <span>v. <?php echo VERSION; ?></span>
+
+                <span>Sprites and Icons generated from <?php echo GitRevision::getString(); ?> | v. <?php echo VERSION; ?></span>
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
